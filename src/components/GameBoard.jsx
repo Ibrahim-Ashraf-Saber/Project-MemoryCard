@@ -6,6 +6,7 @@ import Result from "./Result";
 import { floor, random } from "mathjs";
 import { useState } from "react";
 import { useEffect } from "react";
+import bgImage from "../assets/background.png";
 
 function GameBoard() {
   const fiveRandomId = (count = 5, min = 1, max = 1000) => {
@@ -104,7 +105,10 @@ function GameBoard() {
   console.log(pokemon);
 
   return (
-    <div className="w-screen min-h-screen pt-5 bg-center bg-cover bg-[url('../../public/background.png')]">
+    <div
+      className="w-screen min-h-screen pt-5 bg-center bg-cover bg-[url('../../public/background.png')]"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
       {isLoading ? (
         <div className="absolute transform -translate-x-1/2 -translate-y-1/2 md:text-3xl text-l top-1/2 left-1/2">
           Loading ...
