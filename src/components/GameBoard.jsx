@@ -38,7 +38,6 @@ function GameBoard() {
 
   const handleResetClick = () => {
     setPokemon([]);
-    setRandomId([]);
     setIsLoading(true);
     setIsEnd(false);
     setIsWin(true);
@@ -46,8 +45,7 @@ function GameBoard() {
     setShowBack(false);
     setClickCounts({});
 
-    const newRandomIds = fiveRandomId();
-    setRandomId((prev) => [...prev, newRandomIds]);
+    fiveRandomId();
   };
 
   const handleCardClick = (id) => {
@@ -82,10 +80,12 @@ function GameBoard() {
   };
 
   useEffect(() => {
-    setRandomId((prev) => [...prev, fiveRandomId()]);
+    fiveRandomId();
   }, []);
 
   useEffect(() => {
+    if (!randomId || randomId.length === 0) return;
+
     setIsLoading(true);
     randomId.map((id) => {
       fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -104,7 +104,7 @@ function GameBoard() {
   console.log(pokemon);
 
   return (
-    <div className="w-screen min-h-screen pt-5 bg-center bg-cover bg-bgImg">
+    <div className="w-screen min-h-screen pt-5 bg-center bg-cover bg-[url('../../public/background.png')]">
       {isLoading ? (
         <div className="absolute transform -translate-x-1/2 -translate-y-1/2 md:text-3xl text-l top-1/2 left-1/2">
           Loading ...

@@ -4,9 +4,9 @@ function Footer() {
       <a
         href="https://github.com/Ibrahim-Ashraf-Saber"
         target="_blank"
-        className="m-5 text-xs bg-red-700 text-white px-5 py-3 rounded-full flex items-center justify-center gap-2 w-fit hover:bg-red-950 transition duration-500"
+        className="flex items-center justify-center gap-2 px-5 py-3 m-5 text-xs text-white transition duration-500 bg-red-700 rounded-full w-fit hover:bg-red-950"
       >
-        <i class="bx bxl-github text-xl"></i>
+        <i className="text-xl bx bxl-github"></i>
         Ibrahim Ashraf
       </a>
     </div>
