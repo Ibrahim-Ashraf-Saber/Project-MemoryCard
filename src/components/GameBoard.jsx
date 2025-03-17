@@ -104,9 +104,9 @@ function GameBoard() {
   console.log(pokemon);
 
   return (
-    <div className="bg-bgImg w-screen min-h-screen bg-center bg-cover pt-5">
+    <div className="w-screen min-h-screen pt-5 bg-center bg-cover bg-bgImg">
       {isLoading ? (
-        <div className="md:text-3xl text-l absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute transform -translate-x-1/2 -translate-y-1/2 md:text-3xl text-l top-1/2 left-1/2">
           Loading ...
         </div>
       ) : (
