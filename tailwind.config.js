@@ -7,7 +7,7 @@ export default {
         myFont: ["Press Start 2P"],
       },
       backgroundImage: {
-        bgImg: "url('./src/assets/background.png')",
+        bgImg: "url('./public/background.png')",
       },
     },
   },
